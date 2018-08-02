@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".Activity.LoginScreen">
+
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_marginTop="85dp"
+        android:gravity="center"
+        android:foregroundGravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.rilixtech.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_gravity="center"
+            app:ccp_textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ccp_defaultNameCode="IN"
+            app:ccp_defaultCode="91"/>
+
+        <EditText
+            android:id="@+id/edtnumber"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#000"
+            android:hint="Phone Number"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textColorHint="#000" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_below="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+    </View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/btnsignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
