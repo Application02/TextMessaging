@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp15">15dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="dp25">25dp</dimen>
+
+    <dimen name="otpbuttontext">17sp</dimen>
+    <dimen name="loginCountryCodePicker">16sp</dimen>
+    <dimen name="loginviewheight">80dp</dimen>
+    <dimen name="otpviewheight">80dp</dimen>
+
+    <dimen name="sp5">5sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp25">25sp</dimen>
+</resources>

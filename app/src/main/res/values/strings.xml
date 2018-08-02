@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TextMessaging</string>
+    <string name="edtotphint"> -  -  -  -  -  - </string>
+    <string name="txtotphint">Enter 6-digit code</string>
+    <string name="txtresendtext">Re-send OTP</string>
+    <string name="btnveryfytext">Veryfy</string>
+    <string name="edtphonenumberhint">Phone Number</string>
+    <string name="btnsignuptext">Sign Up</string>
 </resources>

@@ -20,19 +20,33 @@
             android:gravity="center"
             android:focusableInTouchMode="true"
             android:layout_height="wrap_content"
-            android:hint=" -   -   -   -   -   -  "/>
+            android:hint="@string/edtotphint"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter 6-digit code"/>
+            android:hint="@string/txtotphint"/>
+
+        <TextView
+            android:id="@+id/txttimer"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtretry"
+            android:visibility="invisible"
+            android:text="@string/txtresendtext"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="80dp"/>
+        android:layout_height="@dimen/otpviewheight"/>
 
 
     <LinearLayout
@@ -48,10 +62,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:text="Veryfy"
+            android:text="@string/btnveryfytext"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="17sp" />
+            android:textSize="@dimen/otpbuttontext" />
 
     </LinearLayout>
 

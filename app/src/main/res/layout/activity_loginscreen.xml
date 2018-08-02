@@ -19,7 +19,7 @@
         <com.rilixtech.CountryCodePicker
             android:id="@+id/ccp"
             android:layout_gravity="center"
-            app:ccp_textSize="16sp"
+            app:ccp_textSize="@dimen/loginCountryCodePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:ccp_defaultNameCode="IN"
@@ -30,7 +30,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#000"
-            android:hint="Phone Number"
+            android:hint="@string/edtphonenumberhint"
             android:imeOptions="actionNext"
             android:inputType="phone"
             android:singleLine="true"
@@ -43,7 +43,7 @@
         android:id="@+id/view"
         android:layout_below="@+id/lin1"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="@dimen/loginviewheight">
 
     </View>
 
@@ -60,10 +60,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:text="Sign Up"
+            android:text="@string/btnsignuptext"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="17sp" />
+            android:textSize="@dimen/otpbuttontext" />
 
     </LinearLayout>
 
