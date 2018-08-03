@@ -1,6 +1,7 @@
 package com.textmessaging.sau.textmessaging.Activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
@@ -128,11 +129,13 @@ public class HomeScreen extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.item2:
-                Toast.makeText(getApplicationContext(), "Item 2 Selected", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(),SettingScreen.class);
+                startActivity(intent);
+              //  Toast.makeText(getApplicationContext(), "Item 2 Selected", Toast.LENGTH_LONG).show();
                 return true;
-            case R.id.item3:
+            /*case R.id.item3:
                 Toast.makeText(getApplicationContext(), "Item 3 Selected", Toast.LENGTH_LONG).show();
-                return true;
+                return true;*/
             default:
                 return super.onOptionsItemSelected(item);
         }

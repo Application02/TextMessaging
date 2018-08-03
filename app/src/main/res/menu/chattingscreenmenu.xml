@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.textmessaging.sau.textmessaging.Activity.HomeScreen">
+
+    <item  android:id="@+id/videocallchatingscreen"
+        android:title="Item 1"
+        app:showAsAction="always"
+        android:icon="@drawable/videocallchatingscreen"/>
+    <item  android:id="@+id/phonereceiverchatingscreen"
+        android:title="Item 2"
+        app:showAsAction="always"
+        android:icon="@drawable/phone_receiver_chatingscreen"/>
+    <item  android:id="@+id/item3"
+        android:title="Setting"
+        app:showAsAction="withText"/>
+</menu>

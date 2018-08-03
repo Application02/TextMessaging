@@ -48,6 +48,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.textmessaging.sau.textmessaging.Activity.HomeScreen" />
         </activity>
+        <activity android:name=".Activity.ChattingScreen"
+            android:parentActivityName=".Activity.ContactList">
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.textmessaging.sau.textmessaging.Activity.ContactList" />
+        </activity>
+        <activity android:name=".Activity.SettingScreen">
+
+        </activity>
     </application>
 
 </manifest>

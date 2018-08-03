@@ -1,5 +1,6 @@
 package com.textmessaging.sau.textmessaging.Activity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.provider.ContactsContract;
@@ -76,10 +77,11 @@ public class ContactList extends AppCompatActivity {
             case R.id.action_search:
                // Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();
                 return true;
-           /* case R.id.item2:
-                Toast.makeText(getApplicationContext(), "Item 2 Selected", Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.item3:
+        /*    case R.id.item2:
+
+                //Toast.makeText(getApplicationContext(), "Item 2 Selected", Toast.LENGTH_LONG).show();
+                return true;*/
+          /*  case R.id.item3:
                 Toast.makeText(getApplicationContext(), "Item 3 Selected", Toast.LENGTH_LONG).show();
                 return true;*/
             default:

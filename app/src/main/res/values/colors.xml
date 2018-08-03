@@ -16,12 +16,12 @@
     <color name="theme_white_1">#ffffff</color>
 
     <!-- Theme -->
-    <color name="app_accent">@color/theme_orange_1</color>
-    <color name="app_primary">@color/theme_orange_1</color>
-    <color name="app_primary_dark">@color/theme_orange_2</color>
+    <color name="app_accent">@color/colorPrimary</color>
+    <color name="app_primary">@color/colorPrimary</color>
+    <color name="app_primary_dark">@color/colorPrimaryDark</color>
 
     <!-- Fast Scroll -->
-    <color name="fastscroll_bubble">@color/theme_orange_1</color>
-    <color name="fastscroll_handle">@color/theme_gray_2</color>
+    <color name="fastscroll_bubble">@color/colorPrimary</color>
+    <color name="fastscroll_handle">@color/colorPrimaryDark</color>
     <color name="fastscroll_text">@color/theme_white_1</color>
 </resources>

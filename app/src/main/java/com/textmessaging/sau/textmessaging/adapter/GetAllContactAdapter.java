@@ -17,11 +17,13 @@
 package com.textmessaging.sau.textmessaging.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +32,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.l4digital.fastscroll.FastScroller;
+import com.textmessaging.sau.textmessaging.Activity.ChattingScreen;
 import com.textmessaging.sau.textmessaging.R;
 import com.textmessaging.sau.textmessaging.pojo.ContactModel;
 
 import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 public class GetAllContactAdapter extends RecyclerView.Adapter<GetAllContactAdapter.ViewHolder> implements FastScroller.SectionIndexer {
     //ArrayList<ContactModel> contactModel;
@@ -68,6 +73,15 @@ public class GetAllContactAdapter extends RecyclerView.Adapter<GetAllContactAdap
         holder.linearLayoutCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String numbersend =mFilteredList.get(position).getNumber();
+                String namesend = mFilteredList.get(position).getName();
+
+                Log.d(TAG, "onClick: " +numbersend );
+                Intent intent = new Intent(context, ChattingScreen.class);
+                intent.putExtra("number",numbersend);
+                intent.putExtra("name",namesend);
+                context.startActivity(intent);
               /*  String callInfo = "tel:" + contactModel.get(position).getNumber();
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse(callInfo));
