@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import com.textmessaging.sau.textmessaging.R;
 
-public class Calls extends Fragment {
+public class CallsTab extends Fragment {
 
     View view;
 
 
-    public Calls() {
+    public CallsTab() {
         // Required empty public constructor
     }
 

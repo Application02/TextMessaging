@@ -49,6 +49,7 @@ public class LoginScreen extends AppCompatActivity {
             {
                 Intent i = new Intent(getApplicationContext(),HomeScreen.class);
                 startActivity(i);
+                finish();
             }
             else
             {
@@ -100,6 +101,7 @@ public class LoginScreen extends AppCompatActivity {
                 intent.putExtra("otp", response.body().getOtp());
                 intent.putExtra("number", Mob);
                 startActivity(intent);
+                finish();
             }
 
             @Override

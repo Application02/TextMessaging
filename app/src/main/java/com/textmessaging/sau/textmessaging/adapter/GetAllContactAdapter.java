@@ -16,15 +16,10 @@
 
 package com.textmessaging.sau.textmessaging.adapter;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -35,13 +30,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.l4digital.fastscroll.FastScroller;
-import com.textmessaging.sau.textmessaging.Activity.ContactList;
 import com.textmessaging.sau.textmessaging.R;
 import com.textmessaging.sau.textmessaging.pojo.ContactModel;
 
 import java.util.ArrayList;
 
-public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHolder> implements FastScroller.SectionIndexer {
+public class GetAllContactAdapter extends RecyclerView.Adapter<GetAllContactAdapter.ViewHolder> implements FastScroller.SectionIndexer {
     //ArrayList<ContactModel> contactModel;
     LayoutInflater inflater;
     String Name = "A";
@@ -51,7 +45,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHold
     private ArrayList<ContactModel> contactModel;
     private ArrayList<ContactModel> mFilteredList;
 
-    public ExampleAdapter(FragmentActivity context, ArrayList<ContactModel> contactModels) {
+    public GetAllContactAdapter(FragmentActivity context, ArrayList<ContactModel> contactModels) {
         this.contactModel = contactModels;
         this.mFilteredList = contactModels;
         this.context = context;

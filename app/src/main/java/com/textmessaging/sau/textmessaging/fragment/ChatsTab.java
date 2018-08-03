@@ -13,10 +13,10 @@ import com.textmessaging.sau.textmessaging.Activity.ContactList;
 import com.textmessaging.sau.textmessaging.R;
 
 
-public class Chats extends Fragment{
+public class ChatsTab extends Fragment{
     View view;
 
-    public Chats() {
+    public ChatsTab() {
         // Required empty public constructor
     }
 

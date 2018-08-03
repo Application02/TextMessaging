@@ -109,6 +109,7 @@ public class OTPScreen extends AppCompatActivity {
 
                     Intent intent = new Intent(getApplicationContext(),HomeScreen.class);
                     startActivity(intent);
+                    finish();
 
                 }
                 else
@@ -116,6 +117,7 @@ public class OTPScreen extends AppCompatActivity {
                     Toast.makeText(OTPScreen.this, "Not Verify! Try Again...", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(),LoginScreen.class);
                     startActivity(intent);
+                    finish();
                 }
 
             }
@@ -146,6 +148,7 @@ public class OTPScreen extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),OTPScreen.class);
                 intent.putExtra("otp",response.body().getOtp());
                 startActivity(intent);
+                finish();
             }
 
             @Override

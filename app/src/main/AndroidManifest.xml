@@ -23,7 +23,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.OTPScreen" />
-        <activity android:name=".Activity.HomeScreen"></activity>
+        <activity android:name=".Activity.HomeScreen">
+
+            <!-- android:parentActivityName="com.textmessaging.sau.textmessaging.Activity.HomeScreen"> -->
+            <!--
+                <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.textmessaging.sau.textmessaging.Activity.HomeScreen" />
+            -->
+
+        </activity>
 
         <receiver android:name=".services.IncomingSms">
             <intent-filter>
@@ -31,8 +40,13 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Activity.ContactList">
+        <activity
+            android:name=".Activity.ContactList"
+            android:parentActivityName=".Activity.HomeScreen"> <!-- this code for actionbar back button -->
 
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.textmessaging.sau.textmessaging.Activity.HomeScreen" />
         </activity>
     </application>
 

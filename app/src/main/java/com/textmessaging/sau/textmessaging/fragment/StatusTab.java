@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.textmessaging.sau.textmessaging.R;
 
-public class Status extends Fragment {
+public class StatusTab extends Fragment {
 
 View view;
-    public Status() {
+    public StatusTab() {
         // Required empty public constructor
     }
 

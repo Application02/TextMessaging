@@ -6,9 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentManager;
 
-import com.textmessaging.sau.textmessaging.fragment.Calls;
-import com.textmessaging.sau.textmessaging.fragment.Chats;
-import com.textmessaging.sau.textmessaging.fragment.Status;
+import com.textmessaging.sau.textmessaging.fragment.CallsTab;
+import com.textmessaging.sau.textmessaging.fragment.ChatsTab;
+import com.textmessaging.sau.textmessaging.fragment.StatusTab;
 
 public class TabLayoutAdapter extends FragmentPagerAdapter {
 
@@ -26,14 +26,14 @@ public class TabLayoutAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                Chats chats = new Chats();
-                return chats;
+                ChatsTab chatsTab = new ChatsTab();
+                return chatsTab;
             case 1:
-                Status status = new Status();
-                return status;
+                StatusTab statusTab = new StatusTab();
+                return statusTab;
             case 2:
-                Calls calls = new Calls();
-                return calls;
+                CallsTab callsTab = new CallsTab();
+                return callsTab;
             default:
                 return null;
         }

@@ -1,8 +1,5 @@
 package com.textmessaging.sau.textmessaging.Activity;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.provider.ContactsContract;
@@ -11,15 +8,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.l4digital.fastscroll.FastScrollRecyclerView;
 import com.textmessaging.sau.textmessaging.R;
-import com.textmessaging.sau.textmessaging.adapter.ExampleAdapter;
+import com.textmessaging.sau.textmessaging.adapter.GetAllContactAdapter;
 import com.textmessaging.sau.textmessaging.pojo.ContactModel;
 
 import java.util.ArrayList;
@@ -27,7 +21,7 @@ import java.util.ArrayList;
 public class ContactList extends AppCompatActivity {
 
     FastScrollRecyclerView recyclerView;
-    ExampleAdapter exampleAdapter;
+    GetAllContactAdapter getAllContactAdapter;
     private ArrayList<ContactModel> contactModelArrayList;
     int flag = 0;
 
@@ -38,7 +32,13 @@ public class ContactList extends AppCompatActivity {
         setContentView(R.layout.activity_contact_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarcontactlist);
         toolbar.setTitleTextColor(Color.WHITE);
+        //remove default app name
+        toolbar.setTitle("");
+
+        //this code for back arrow
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         initialization();
     }
@@ -136,8 +136,8 @@ public class ContactList extends AppCompatActivity {
         }
         phones.close();
 
-        exampleAdapter = new ExampleAdapter(this, contactModelArrayList);
-        recyclerView.setAdapter(exampleAdapter);
+        getAllContactAdapter = new GetAllContactAdapter(this, contactModelArrayList);
+        recyclerView.setAdapter(getAllContactAdapter);
 
 }
 
@@ -153,7 +153,7 @@ public class ContactList extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
 
-                exampleAdapter.getFilter().filter(newText);
+                getAllContactAdapter.getFilter().filter(newText);
                 return true;
             }
         });
