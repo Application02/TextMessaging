@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.textmessaging.sau.textmessaging.R;
-import com.textmessaging.sau.textmessaging.adapter.MyAdapter;
+import com.textmessaging.sau.textmessaging.adapter.TabLayoutAdapter;
 
 public class HomeScreen extends AppCompatActivity {
     SharedPreferences pref;
@@ -49,7 +49,7 @@ public class HomeScreen extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Calls")/*.setIcon(tabimg[2])*/);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final MyAdapter adapter = new MyAdapter(this, getSupportFragmentManager(), tabLayout.getTabCount());
+        final TabLayoutAdapter adapter = new TabLayoutAdapter(this, getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

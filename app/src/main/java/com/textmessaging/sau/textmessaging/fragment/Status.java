@@ -1,6 +1,8 @@
 package com.textmessaging.sau.textmessaging.fragment;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +12,7 @@ import com.textmessaging.sau.textmessaging.R;
 
 public class Status extends Fragment {
 
-
+View view;
     public Status() {
         // Required empty public constructor
     }
@@ -18,8 +20,19 @@ public class Status extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.status_fragment, container, false);
+
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fabstatus);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.status_fragment, container, false);
+        return view;
     }
 
 }

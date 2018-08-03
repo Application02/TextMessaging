@@ -10,12 +10,12 @@ import com.textmessaging.sau.textmessaging.fragment.Calls;
 import com.textmessaging.sau.textmessaging.fragment.Chats;
 import com.textmessaging.sau.textmessaging.fragment.Status;
 
-public class MyAdapter extends FragmentPagerAdapter {
+public class TabLayoutAdapter extends FragmentPagerAdapter {
 
     private Context myContext;
     int totalTabs;
 
-    public MyAdapter(Context context, FragmentManager fm, int totalTabs) {
+    public TabLayoutAdapter(Context context, FragmentManager fm, int totalTabs) {
         super(fm);
         myContext = context;
         this.totalTabs = totalTabs;
