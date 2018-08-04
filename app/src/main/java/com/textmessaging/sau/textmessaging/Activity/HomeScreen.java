@@ -1,9 +1,13 @@
 package com.textmessaging.sau.textmessaging.Activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -13,15 +17,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.textmessaging.sau.textmessaging.R;
 import com.textmessaging.sau.textmessaging.adapter.TabLayoutAdapter;
+import com.textmessaging.sau.textmessaging.java.MyApplication;
+import com.textmessaging.sau.textmessaging.services.ConnectivityReceiver;
 
-public class HomeScreen extends AppCompatActivity {
+import java.net.InetAddress;
+
+public class HomeScreen extends AppCompatActivity  implements ConnectivityReceiver.ConnectivityReceiverListener{
     SharedPreferences pref;
     TabLayout tabLayout;
     ViewPager viewPager;
+     RelativeLayout relativeLayout;
+    String   message;
+    int color;
+
    /* int [] tabimg={
             R.drawable.chaticon,
             R.drawable.statusicon,
@@ -39,6 +54,10 @@ public class HomeScreen extends AppCompatActivity {
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
+         relativeLayout = (RelativeLayout) findViewById(R.id.relative);
+
+
+
         //shared pref for Check user already login or first time
         pref = getApplicationContext().getSharedPreferences("logindata", 0);
         SharedPreferences.Editor editor = pref.edit();
@@ -49,8 +68,7 @@ public class HomeScreen extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
         tabLayout.addTab(tabLayout.newTab().setText("Chats")/*.setIcon(tabimg[0])*/);
-        tabLayout.addTab(tabLayout.newTab().setText("Status")/*.setIcon(tabimg[1])*/);
-        tabLayout.addTab(tabLayout.newTab().setText("Calls")/*.setIcon(tabimg[2])*/);
+        tabLayout.addTab(tabLayout.newTab().setText("Calls")/*.setIcon(tabimg[1])*/);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final TabLayoutAdapter adapter = new TabLayoutAdapter(this, getSupportFragmentManager(), tabLayout.getTabCount());
@@ -76,6 +94,61 @@ public class HomeScreen extends AppCompatActivity {
         });
 
     }
+
+    // Method to manually check connection status
+    private void checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        showSnack(isConnected);
+    }
+
+    // Showing the status in Snackbar
+    private void showSnack(boolean isConnected) {
+      //  String message;
+        //int color;
+        if (isConnected) {
+           // message = "Good! Connected to Internet";
+            //color = Color.WHITE;
+        } else {
+            message = "Sorry! Not connected to internet";
+            color = Color.RED;
+
+            Snackbar snackbar = Snackbar
+                    .make(findViewById(R.id.fab), message, Snackbar.LENGTH_LONG);
+
+            View sbView = snackbar.getView();
+            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(color);
+            snackbar.show();
+        }
+
+    }
+
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkConnection();
+        // register connection status listener
+       MyApplication.getInstance().setConnectivityListener(HomeScreen.this);
+      /*  isNetworkConnected();
+
+        if (isNetworkConnected()==true)
+        {
+
+        }
+        else
+        {
+            Snackbar snackbar1 = Snackbar.make(relativeLayout, "please connect Internet", Snackbar.LENGTH_SHORT);
+            snackbar1.show();
+        }*/
+    }
+
+/*    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null;
+    }*/
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -139,5 +212,10 @@ public class HomeScreen extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showSnack(isConnected);
     }
 }

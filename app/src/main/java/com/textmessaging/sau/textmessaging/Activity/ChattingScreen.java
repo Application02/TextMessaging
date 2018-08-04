@@ -17,18 +17,23 @@ import com.textmessaging.sau.textmessaging.pojo.ContactModel;
 
 import java.util.ArrayList;
 
+
+
+
 public class ChattingScreen extends AppCompatActivity  {
 
     String number,name;
     TextView txtname;
     private static final String TAG = "ChattingScreen";
     private ArrayList<ContactModel> contactModel;
+    String APP_TOKEN = "5b65746e17ea370022679e13";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatting_screen);
         txtname = findViewById(R.id.txtname);
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_top);
@@ -56,6 +61,8 @@ public class ChattingScreen extends AppCompatActivity  {
 
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

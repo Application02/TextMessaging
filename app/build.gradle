@@ -51,5 +51,13 @@ dependencies {
     //rounded imageview
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
+    //free msg searvice up to 10,000 user permonth
+
+    implementation 'com.google.android.gms:play-services-gcm:10.2.1'
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation 'com.squareup.okhttp:okhttp:2.4.0'
+    implementation 'io.smooch:core:latest.release'
+    implementation 'io.smooch:ui:latest.release'
+
 
 }

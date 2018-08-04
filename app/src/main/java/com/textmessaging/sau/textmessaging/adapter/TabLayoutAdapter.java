@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentManager;
 
 import com.textmessaging.sau.textmessaging.fragment.CallsTab;
 import com.textmessaging.sau.textmessaging.fragment.ChatsTab;
-import com.textmessaging.sau.textmessaging.fragment.StatusTab;
 
 public class TabLayoutAdapter extends FragmentPagerAdapter {
 
@@ -29,9 +28,6 @@ public class TabLayoutAdapter extends FragmentPagerAdapter {
                 ChatsTab chatsTab = new ChatsTab();
                 return chatsTab;
             case 1:
-                StatusTab statusTab = new StatusTab();
-                return statusTab;
-            case 2:
                 CallsTab callsTab = new CallsTab();
                 return callsTab;
             default:

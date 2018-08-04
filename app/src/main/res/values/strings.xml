@@ -6,4 +6,6 @@
     <string name="btnveryfytext">Veryfy</string>
     <string name="edtphonenumberhint">Phone Number</string>
     <string name="btnsignuptext">Sign Up</string>
+    
+    <string name="SmoochAppID">5b65746e17ea370022679e13</string>
 </resources>
